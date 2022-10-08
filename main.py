@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 from flask_bootstrap import Bootstrap
 import smtplib
 import os
@@ -9,7 +9,7 @@ app = Flask(__name__)
 Bootstrap(app)
 
 
-@app.route("/", methods=["GET", "POST"])
+@app.route('/', methods=["GET", "POST"])
 def home():
     if request.method == "POST":
         data = request.form
